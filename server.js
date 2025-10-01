@@ -26,7 +26,7 @@ app.post('/send-whatsapp', async (req, res) => {
     const msg = await client.messages.create({
       from: `whatsapp:${twilioPhone}`,
       to: 'whatsapp:+919944490717',
-      body: `New message from Ammu: ${message}`
+      body: message
     });
 
     res.json({ success: true, sid: msg.sid });
